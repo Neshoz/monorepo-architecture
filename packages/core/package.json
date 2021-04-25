@@ -1,0 +1,16 @@
+{
+  "name": "@mediatool-poc/core",
+  "version": "1.0.0",
+  "description": "The core part of the app",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "webpack-dev-server --hot --open"
+  },
+  "dependencies": {
+    "@mediatool-poc/hub": "1.0.0",
+    "@mediatool-poc/tools": "1.0.0",
+    "react-redux": "^7.2.3",
+    "redux": "^4.0.5"
+  }
+}

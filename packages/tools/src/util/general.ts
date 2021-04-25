@@ -1,0 +1,1 @@
+export const pluralize = (str: string) => `${str}s`

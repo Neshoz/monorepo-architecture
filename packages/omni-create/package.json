@@ -1,0 +1,10 @@
+{
+  "name": "@mediatool-poc/omni-create",
+  "version": "1.0.0",
+  "description": "The omni create part of the app",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  }
+}

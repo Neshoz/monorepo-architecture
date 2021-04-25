@@ -1,0 +1,25 @@
+orders
+integrations
+settings
+
+--Grouped by domain--    "packages": ["mediaplanning/*"]
+mediaplanning
+  app-reporting
+    service
+      requests.js
+  app-sheet
+  app-timeline
+  backend
+    amend
+    util
+  shared
+    types
+
+
+
+const { orgId } = useParams()
+
+// Get an entity from the redux store, if it does not exist yet, fetch it.
+// Hence the reason for providing data, loading and error states, extracted from a redux selector.
+const { data, loading, error } = useEntity('organization', orgId)
+const { data, loading, error } = useCollection('campaign', organizationId)

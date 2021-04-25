@@ -1,0 +1,14 @@
+{
+  "name": "@mediatool-poc/hub",
+  "version": "1.0.0",
+  "description": "The hub part of the app",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "watch": "rm -rf dist && tsc --watch",
+    "build": "rm -rf dist && tsc"
+  },
+  "dependencies": {
+    "@mediatool-poc/tools": "1.0.0"
+  }
+}

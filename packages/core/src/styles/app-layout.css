@@ -1,0 +1,17 @@
+.app-area {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex: 1;
+}
+
+.app-area > .app-sidebar {
+  display: flex;
+  height: 100%;
+  width: 10rem;
+}
+
+.app-area > .app-main {
+  height: 100%;
+  width: 100%;
+}

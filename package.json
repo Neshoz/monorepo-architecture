@@ -1,0 +1,35 @@
+{
+  "private": true,
+  "workspaces": ["packages/*"],
+  "name": "mediatool-poc",
+  "version": "1.0.0",
+  "description": "PoC monorepo",
+  "scripts": {
+    "start": "yarn workspace @mediatool-poc/core start",
+    "build": "cd packages/core && rm -rf dist && webpack --config webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/Neshoz/task-manager-fe#readme",
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/webpack": "^4.41.25",
+    "awesome-typescript-loader": "^5.2.1",
+    "css-loader": "^5.2.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0",
+    "typescript": "^4.0.5",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "less": "^4.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0"
+  }
+}
