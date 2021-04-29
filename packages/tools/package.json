@@ -5,8 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "watch": "rm -rf dist && tsc --watch",
-    "build": "rm -rf dist && tsc"
+    "watch": "rimraf dist && tsc --watch",
+    "build": "rimraf dist && tsc"
   },
   "dependencies": {
     "react-redux": "^7.2.3",

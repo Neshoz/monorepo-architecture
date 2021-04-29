@@ -5,10 +5,13 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "watch": "rm -rf dist && tsc --watch",
-    "build": "rm -rf dist && tsc"
+    "watch": "rimraf dist && tsc --watch",
+    "build": "rimraf dist && tsc"
   },
   "dependencies": {
-    "@mediatool-poc/tools": "1.0.0"
+    "@handsontable/react": "^5.0.0",
+    "@mediatool-poc/tools": "1.0.0",
+    "react-dnd": "^14.0.2",
+    "react-dnd-html5-backend": "^14.0.0"
   }
 }
