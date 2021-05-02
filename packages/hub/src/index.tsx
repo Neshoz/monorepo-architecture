@@ -3,7 +3,6 @@ import { Route, Switch, useHistory } from "react-router-dom";
 import { LazyPage, useEntity } from "@mediatool-poc/tools";
 import { id } from "./util";
 import { ICampaign } from "./types";
-// import Campaign from "./campaign";
 
 const Hub = () => {
   const history = useHistory();

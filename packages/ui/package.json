@@ -1,0 +1,14 @@
+{
+  "name": "@mediatool-poc/ui",
+  "version": "1.0.0",
+  "description": "UI-System and reusable visual components",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "watch": "rimraf dist && tsc --watch",
+    "build": "rimraf dist && tsc"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.6.0"
+  }
+}

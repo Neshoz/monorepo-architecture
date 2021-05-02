@@ -9,10 +9,8 @@
   "scripts": {
     "start": "yarn workspace @mediatool-poc/core start",
     "build": "cd packages/core && rm -rf dist && webpack --config webpack.config.js",
-    "build:hub": "yarn workspace @mediatool-poc/hub build",
-    "build:tools": "yarn workspace @mediatool-poc/tools build",
     "hub": "yarn workspace @mediatool-poc/hub",
-    "settings": "yarn workspace @mediatool-poc/settings"
+    "ui": "yarn workspace @mediatool-poc/ui"
   },
   "author": "",
   "license": "ISC",
