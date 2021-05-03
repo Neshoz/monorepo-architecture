@@ -1,0 +1,34 @@
+# Final package responsibility philosophy for enterprise compatibility
+Feature teams should have to write as little CSS as possible
+Feature teams should be able to consume a state management framework for trivial CRUD operations
+Feature teams should focus on building features, not infrastructure or common ui components
+Feature teams should be able to work on their feature in isolation from other features
+
+Isolation is one of the very few, but extremely important building blocks that's an absolute necessity for enterprise systems
+
+Core
+  Be the scaffold of the app
+  Top-level feature routing
+  Authentication (sign-in and sign-up)
+  Global behaviors, such as rendering a modal on a specific hotkey
+    Explore easy-to-use behavior mounting, can each feature mount its own behaviors???
+
+UI
+  Will re-export or add extra functionality to Chakra components
+  Build Mediatool specific components composed of Chakra components
+
+Build tools
+  Provide tools and configuration to all of the other packages
+  Bundle & Transpiling
+  Testing
+  Linting
+
+Common tools
+  State management abstraction for common operations (entity system)
+  Util components, such as lazily load components, common util hooks, Superagent config
+
+Feature <x> (example hub)
+  Full feature is built here
+  May or may not have internal routing
+  In-charge of itself in terms of Testing
+  Makes use of packages [ui, common-tools, build-tools] to rapidly built high quality feature

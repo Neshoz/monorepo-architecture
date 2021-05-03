@@ -15,8 +15,6 @@ mediaplanning
   shared
     types
 
-
-
 const { orgId } = useParams()
 
 // Get an entity from the redux store, if it does not exist yet, fetch it.
