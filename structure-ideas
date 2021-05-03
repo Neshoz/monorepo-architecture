@@ -23,3 +23,5 @@ const { orgId } = useParams()
 // Hence the reason for providing data, loading and error states, extracted from a redux selector.
 const { data, loading, error } = useEntity('organization', orgId)
 const { data, loading, error } = useCollection('campaign', organizationId)
+
+Provide a common-tools package, that should be installed in every package (backend and frontend), which provides: Linting, transpiling, testing
