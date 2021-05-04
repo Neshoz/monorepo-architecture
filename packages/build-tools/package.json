@@ -1,0 +1,7 @@
+{
+  "name": "@mediatool-poc/build-tools",
+  "version": "1.0.0",
+  "description": "Build and configuration tools for all packages",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts"
+}
