@@ -11,6 +11,7 @@
   "dependencies": {
     "@handsontable/react": "^5.0.0",
     "@mediatool-poc/tools": "1.0.0",
+    "@mediatool-poc/ui": "1.0.0",
     "react-dnd": "^14.0.2",
     "react-dnd-html5-backend": "^14.0.0"
   }

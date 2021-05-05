@@ -1,2 +1,1 @@
-import { Flex, FlexProps } from '@chakra-ui/react'
-export { Flex, FlexProps }
+export { Flex, FlexProps } from '@chakra-ui/react'

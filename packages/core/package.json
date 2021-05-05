@@ -8,6 +8,7 @@
     "start": "webpack-dev-server --hot --open"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.6.0",
     "@mediatool-poc/hub": "1.0.0",
     "@mediatool-poc/tools": "1.0.0",
     "react-redux": "^7.2.3",

@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
+import { ChakraProvider } from '@chakra-ui/react'
 import { store } from '@mediatool-poc/tools'
 import { AppLayout, Sidebar } from './layout'
 import { routes } from './routing'
@@ -19,12 +20,14 @@ const sidebarItems: ISidebarItem[] = [
 
 const App = () => (
   <Provider store={store}>
-    <BrowserRouter>
-      <AppLayout
-        sidebar={<Sidebar items={sidebarItems} />}
-        main={<Routing routes={routes} />}
-      />
-    </BrowserRouter>
+    <ChakraProvider>
+      <BrowserRouter>
+        <AppLayout
+          sidebar={<Sidebar items={sidebarItems} />}
+          main={<Routing routes={routes} />}
+        />
+      </BrowserRouter>
+    </ChakraProvider>
   </Provider>
 )
 

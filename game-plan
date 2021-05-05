@@ -36,3 +36,9 @@ Feature <x> (example hub)
   May or may not have internal routing
   In-charge of itself in terms of [testing, changelogs etc]
   Makes use of packages [ui, common-tools, build-tools] to rapidly built high quality feature
+
+Feature-x
+  Frontend
+    Feature<x>.tsx
+  Backend
+  Shared
