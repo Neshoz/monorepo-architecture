@@ -6,12 +6,14 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "watch": "rimraf dist && tsc --watch",
-    "build": "rimraf dist && tsc"
+    "build": "rimraf dist && tsc",
+    "build:esbuild": "rimraf dist && node ../../scripts/build-feature.js"
   },
   "dependencies": {
     "@handsontable/react": "^5.0.0",
-    "@mediatool-poc/tools": "1.0.0",
+    "@mediatool-poc/build-tools": "1.0.0",
     "@mediatool-poc/ui": "1.0.0",
+    "esbuild": "^0.11.19",
     "react-dnd": "^14.0.2",
     "react-dnd-html5-backend": "^14.0.0"
   }
