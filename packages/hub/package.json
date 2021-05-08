@@ -7,7 +7,7 @@
   "scripts": {
     "watch": "rimraf dist && tsc --watch",
     "build": "rimraf dist && tsc",
-    "build:esbuild": "rimraf dist && node ../../scripts/build-feature.js"
+    "build:esbuild": "rimraf dist && tsc --declaration --emitDeclarationOnly && node ./build.js"
   },
   "dependencies": {
     "@handsontable/react": "^5.0.0",

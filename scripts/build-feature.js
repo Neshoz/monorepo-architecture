@@ -9,22 +9,18 @@ interface IBuildOptions {
 }
 */
 
-/*
-const entry = join('../packages/hub/src/index.tsx')
-const outdir = join('../packages/hub/dist')
-console.log(entry)
-console.log(outdir)
-*/
+const fPath = join(__dirname, '../packages')
 
 function buildFeature({ feature = 'hub', env = 'dev' }) {
   require('esbuild').build({
-    entryPoints: ['../packages/hub/src/index.tsx'],
-    outdir: '../packages/hub/dist',
+    entryPoints: [`${fPath}/${feature}/src/index.tsx`],
+    outdir: `${fPath}/${feature}/dist`,
     bundle: true,
-    write: true,
     splitting: true,
     format: 'esm',
-  }).catch(() => process.exit(0))
+    minify: env === 'prod',
+    sourcemap: env === 'dev'
+  }).catch(() => process.exit(1))
 }
 
-exports = buildFeature
+exports.buildFeature = buildFeature
