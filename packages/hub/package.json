@@ -6,8 +6,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "watch": "rimraf dist && tsc --watch",
-    "build": "rimraf dist && tsc",
-    "build:esbuild": "rimraf dist && tsc --declaration --emitDeclarationOnly && node ./build.js"
+    "build": "rimraf dist && tsc"
   },
   "dependencies": {
     "@handsontable/react": "^5.0.0",
