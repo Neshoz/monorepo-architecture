@@ -1,0 +1,6 @@
+Schedule for 2-3 weeks
+1: New devserver (Vite)
+2: Build script for packages (Rollup)
+3: Evaluate structure & find potential pain-points
+4: Test it in Mediatool, move existing stuff to @Mediatool/legacy
+Nice-to-have: Docker
