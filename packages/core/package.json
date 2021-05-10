@@ -11,7 +11,7 @@
     "@chakra-ui/react": "^1.6.0",
     "@mediatool-poc/hub": "1.0.0",
     "@mediatool-poc/tools": "1.0.0",
-    "react-redux": "^7.2.3",
-    "redux": "^4.0.5"
+    "@types/react-dom": "^17.0.3",
+    "react-dom": "^17.0.2"
   }
 }
