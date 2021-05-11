@@ -5,10 +5,10 @@ export type FindRoutePredicate = (node: IRoute) => boolean
 
 export function findRoute(routes: IRoute[], predicate: FindRoutePredicate) {
   const queue = routes.slice()
-​
+
   while (queue.length) {
     const next = queue.pop();
-​
+    
     if (next && predicate(next)) {
       return next;
     }

@@ -1,9 +1,14 @@
 {
   "extends": "../../tsconfig.json",
+  "include": ["./src/**/*", "index.tsx"],
   "exclude": ["node_modules", "dist"],
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
-    "declaration": false
+    "rootDir": ".",
+    "types": ["vite/client"],
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react",
   }
 }

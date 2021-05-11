@@ -8,11 +8,13 @@
   "description": "PoC monorepo",
   "scripts": {
     "start": "yarn workspace @mediatool-poc/core start",
-    "build": "cd packages/core && rm -rf dist && webpack --config webpack.config.js",
+    "build": "rimraf packages/core/dist && webpack --config packages/core/webpack.config.js",
     "hub": "yarn workspace @mediatool-poc/hub",
     "ui": "yarn workspace @mediatool-poc/ui",
     "core": "yarn workspace @mediatool-poc/core",
-    "build-tools": "yarn workspace @mediatool-poc/build-tools"
+    "tools": "yarn workspace @mediatool-poc/tools",
+    "build-tools": "yarn workspace @mediatool-poc/build-tools",
+    "docker": "docker build . -t docker-app"
   },
   "author": "",
   "license": "ISC",
@@ -20,16 +22,12 @@
   "devDependencies": {
     "@types/react": "^17.0.3",
     "@types/react-router-dom": "^5.1.7",
-    "@types/webpack": "^4.41.25",
     "awesome-typescript-loader": "^5.2.1",
     "css-loader": "^5.2.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "style-loader": "^2.0.0",
-    "typescript": "^4.0.5",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "typescript": "^4.0.5"
   },
   "dependencies": {
     "@emotion/react": "^11.1.5",

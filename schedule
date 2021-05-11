@@ -1,6 +1,6 @@
 Schedule for 2-3 weeks
-1: New devserver (Vite)
-2: Build script for packages (Rollup)
-3: Evaluate structure & find potential pain-points
-4: Test it in Mediatool, move existing stuff to @Mediatool/legacy
+1: New devserver (Vite) - Not possible right now, since it requires Node version > 12.0.0
+2: Build script for packages (Rollup or esbuild) - Might go with esbuild
+3: Evaluate structure & find potential pain-points - Have another tech talk about it, present a more elaborate example (network reqs etc)
+4: Test it in Mediatool - Move existing stuff to @Mediatool/legacy
 Nice-to-have: Docker

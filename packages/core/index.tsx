@@ -4,11 +4,11 @@ import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { ChakraProvider } from '@chakra-ui/react'
 import { store } from '@mediatool-poc/tools'
-import { AppLayout, Sidebar } from './layout'
-import { routes } from './routing'
-import { Routing } from './routing/routing'
-import { ISidebarItem } from './types'
-import './styles/index.css'
+import { AppLayout, Sidebar } from './src/layout'
+import { routes } from './src/routing'
+import { Routing } from './src/routing/routing'
+import { ISidebarItem } from './src/types'
+import './src/styles/index.css'
 
 const sidebarItems: ISidebarItem[] = [
   {
