@@ -14,7 +14,7 @@ const sidebarItems: ISidebarItem[] = [
   {
     icon: '',
     label: 'Hub',
-    path: '/hub'
+    path: '/hub',
   }
 ]
 

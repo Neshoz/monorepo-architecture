@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "watch": "tsc --watch --noEmit",
+    "tsc:watch": "tsc --watch --noEmit && yarn build:watch",
+    "build:watch": "yarn build-tools build -f hub",
     "build": "rimraf dist && tsc"
   },
   "dependencies": {
@@ -17,5 +18,8 @@
     "react-dnd-html5-backend": "^14.0.0",
     "react-redux": "^7.2.4",
     "redux": "^4.1.0"
+  },
+  "devDependencies": {
+    "tsc-watch": "^4.2.9"
   }
 }

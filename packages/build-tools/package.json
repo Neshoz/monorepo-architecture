@@ -11,9 +11,13 @@
     "commander": "^7.2.0",
     "esbuild": "^0.11.20",
     "ts-node": "^9.1.1",
-    "typescript": "^4.2.4"
+    "typescript": "^4.2.4",
+    "vite": "^2.3.1"
   },
   "scripts": {
     "build-tools": "./bin/index.js"
+  },
+  "devDependencies": {
+    "tsc-watch": "^4.2.9"
   }
 }
