@@ -18,6 +18,7 @@
     "build-tools": "./bin/index.js"
   },
   "devDependencies": {
+    "@rollup/plugin-multi-entry": "^4.0.0",
     "tsc-watch": "^4.2.9"
   }
 }

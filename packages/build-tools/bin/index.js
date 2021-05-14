@@ -9,7 +9,8 @@ const {
   getExternalDependencies,
   getPackage,
   getPackagePath,
-  tscWatch
+  tscWatch,
+  generateTsDeclarations
 } = require('../util')
 
 program
@@ -36,6 +37,7 @@ program
         process.exit(1)
       }
     })
+    generateTsDeclarations(feature)
     tscWatch(feature)
     build({
       entryPoints: [`${fPath}/src/index.tsx`],
@@ -58,6 +60,7 @@ program
             return
           }
           console.log('Watch build succeeded: ', result)
+          generateTsDeclarations(feature)
         }
       }
     }).catch((err) => {

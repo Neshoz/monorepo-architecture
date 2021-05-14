@@ -1,4 +1,5 @@
 const { build } = require('vite')
+const multi = require('@rollup/plugin-multi-entry')
 const { getPackage, getExternalDependencies, getPackagePath } = require("../util")
 
 // To be able to use globbing as an entry point for code splitting
@@ -14,7 +15,7 @@ const start = (args) => {
     build: { 
       rollupOptions: {
         treeshake: true,
-        input: [`${featurePath}/src/index.tsx`],
+        input: [`${featurePath}/**/*.ts`, `${featurePath}/**/*.tsx`],
         output: {
           dir: `${featurePath}/dist`,
           chunkFileNames: '[name]-[hash].js',
@@ -24,6 +25,13 @@ const start = (args) => {
           'react',
           'react-router-dom',
           ...getExternalDependencies(corePkg, featurePkg)
+        ],
+        plugins: [
+          multi({
+            options: {
+              exports: true
+            }
+          })
         ]
       }
     }

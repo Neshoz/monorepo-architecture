@@ -35,9 +35,21 @@ function tscWatch(package) {
   childProcess.stdout.pipe(process.stdout)
 }
 
+function generateTsDeclarations(package) {
+  const childProcess = exec(
+    `tsc --declaration --emitDeclarationOnly --project ${getPackagePath(package)}`,
+    (err) => {
+      if (err) {
+        childProcess.kill(1)
+      }
+    }
+  )
+}
+
 module.exports = {
   getPackage,
   getPackagePath,
   getExternalDependencies,
-  tscWatch
+  tscWatch,
+  generateTsDeclarations
 }
