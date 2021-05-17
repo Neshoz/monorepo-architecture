@@ -7,13 +7,12 @@
   "version": "1.0.0",
   "description": "PoC monorepo",
   "scripts": {
-    "start": "yarn workspace @mediatool-poc/core start",
-    "build": "rimraf packages/core/dist && webpack --config packages/core/webpack.config.js",
+    "start": "yarn core start",
+    "build": "yarn core build",
     "hub": "yarn workspace @mediatool-poc/hub",
     "ui": "yarn workspace @mediatool-poc/ui",
     "core": "yarn workspace @mediatool-poc/core",
     "tools": "yarn workspace @mediatool-poc/tools",
-    "build-tools": "yarn workspace @mediatool-poc/build-tools",
     "docker": "docker build . -t docker-app"
   },
   "author": "",
@@ -32,6 +31,7 @@
   "dependencies": {
     "@emotion/react": "^11.1.5",
     "@emotion/styled": "^11.3.0",
+    "@mediatool-poc/build-tools": "1.0.0",
     "esbuild": "^0.11.19",
     "framer-motion": "^4.1.11",
     "less": "^4.1.1",

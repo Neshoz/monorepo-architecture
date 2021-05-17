@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "description": "The hub part of the app",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "module": "src/index.tsx",
   "scripts": {
     "tsc:watch": "tsc --watch --noEmit && yarn build:watch",
-    "build:watch": "yarn build-tools build -f hub",
+    "build:watch": "yarn build-tools build:esbuild -f hub",
     "build": "rimraf dist && tsc"
   },
   "dependencies": {
     "@handsontable/react": "^5.0.0",
-    "@mediatool-poc/build-tools": "1.0.0",
     "@mediatool-poc/ui": "1.0.0",
     "esbuild": "^0.11.19",
     "react-dnd": "^14.0.2",

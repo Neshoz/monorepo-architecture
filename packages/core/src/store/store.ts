@@ -1,7 +1,21 @@
 // @ts-nocheck
 import { createStore, Action, combineReducers, Store } from 'redux'
-import { AppState, BaseAction } from '../types'
-import { pluralize } from '../util'
+
+export type BaseAction<T> = {
+  entity: Entity
+  payload: T
+} & Action
+
+export type AppState = {
+  idMap: Record<string, any>
+  organization: {
+    _id: string
+    name: string
+    campaigns: any[]
+  }
+}
+
+export const pluralize = (str: string) => `${str}s`
 
 const initialIdMap = {
   "123asd": {

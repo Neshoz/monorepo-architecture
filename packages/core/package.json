@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "The core part of the app",
   "main": "dist/index.js",
+  "module": "src/index.tsx",
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc --noEmit && vite build",
     "serve": "vite preview"
   },
   "devDependencies": {
@@ -17,7 +18,11 @@
     "@chakra-ui/react": "^1.6.0",
     "@mediatool-poc/hub": "1.0.0",
     "@mediatool-poc/tools": "1.0.0",
+    "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.3",
-    "react-dom": "^17.0.2"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0"
   }
 }

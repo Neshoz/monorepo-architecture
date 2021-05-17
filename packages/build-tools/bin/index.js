@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const { build } = require('esbuild')
-const path = require('path')
 const program = require('commander')
 const { exec } = require('child_process')
 const { start } = require('../src/start')
@@ -14,13 +13,12 @@ const {
 } = require('../util')
 
 program
-  .command('start')
-  .description('Start core and a given feature')
-  .option('-f, --feature [value]', 'Target feature')
+  .command('start <feature>')
+  .description('Start core and tsc watcher for named feature')
   .action(start)
 
 program
-  .command('build')
+  .command('build:esbuild')
   .description('This is a test build')
   .requiredOption('-f, --feature [value]', 'Which feature to build')
   .option('-e, --env [value]', 'Environment to create build for', 'dev')

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "UI-System and reusable visual components",
   "main": "dist/index.js",
-  "module": "dist/index.js",
+  "module": "src/index.ts",
   "types": "dist/index.d.ts",
   "scripts": {
     "watch": "rimraf dist && tsc --watch",
