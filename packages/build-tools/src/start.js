@@ -1,7 +1,7 @@
 const { exec } = require('child_process')
 const { tscWatch } = require("../util")
 
-const start = (feature) => {
+const start = (package) => {
   exec(`yarn core start`, (err) => {
     if (err) {
       console.error(`Error starting core: `, err)
@@ -9,7 +9,7 @@ const start = (feature) => {
     }
   })
   tscWatch('core')
-  tscWatch(feature)
+  tscWatch(package)
 }
 
 exports.start = start

@@ -12,9 +12,10 @@ const {
 } = require('../util')
 
 program
-  .command('start <feature>')
-  .description('Start core and tsc watcher for named feature')
+  .command('start <package>')
+  .description('Start core and tsc watcher for named package')
   .action(start)
+
 
 program
   .command('build:esbuild')
