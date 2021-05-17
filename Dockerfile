@@ -1,4 +1,4 @@
-FROM node:10.23.1
+FROM node:12.22.1
 
 WORKDIR /Users/kevinnemec/Development/mediatool-poc
 
@@ -14,7 +14,7 @@ COPY ./packages/tools/package.json ./packages/tools/
 COPY ./packages/ui/package.json ./packages/ui/
 RUN yarn
 
-# Copy all files of our app (except files specified in the .gitignore)
+# Copy all files of our app (except files specified in the .dockerignore)
 COPY . .
 
 # Build all the packages
@@ -29,4 +29,4 @@ RUN yarn build
 EXPOSE 8000
 
 # Run the app
-CMD ["yarn", "start"]
+CMD ["yarn", "serve:prod"]
