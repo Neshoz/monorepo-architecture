@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const { build } = require('esbuild')
 const program = require('commander')
 const { exec } = require('child_process')
@@ -22,9 +21,8 @@ program
   .description('This is a test build')
   .requiredOption('-f, --feature [value]', 'Which feature to build')
   .option('-e, --env [value]', 'Environment to create build for', 'dev')
-  .option('-w, --watch [value]', 'Start builder in watch mode', true)
   .action((args) => {
-    const { feature, env, watch } = args
+    const { feature, env } = args
     const corePkg = getPackage('core')
     const featurePkg = getPackage(feature)
     const fPath = getPackagePath(feature)
@@ -51,16 +49,6 @@ program
         'react-router-dom',
         ...getExternalDependencies(corePkg, featurePkg)
       ],
-      watch: (env === 'dev' || watch) && {
-        onRebuild(error, result) {
-          if (error) {
-            console.error('Watch build failed: ', error)
-            return
-          }
-          console.log('Watch build succeeded: ', result)
-          generateTsDeclarations(feature)
-        }
-      }
     }).catch((err) => {
       console.error(err)
       process.exit(1)
