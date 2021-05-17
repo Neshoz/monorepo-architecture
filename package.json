@@ -7,6 +7,7 @@
   "version": "1.0.0",
   "description": "PoC monorepo",
   "scripts": {
+    "start": "yarn build-tools start",
     "build": "yarn core build",
     "serve:prod": "yarn core serve",
     "hub": "yarn workspace @mediatool-poc/hub",
