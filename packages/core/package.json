@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "The core part of the app",
   "main": "dist/index.js",
-  "module": "src/index.tsx",
+  "module": "./index.tsx",
   "types": "dist/index.d.ts",
   "scripts": {
     "start": "vite",

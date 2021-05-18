@@ -2,9 +2,12 @@
   "name": "@mediatool-poc/tools",
   "version": "1.0.0",
   "description": "Tools for the tool itself",
-  "main": "dist/index.js",
-  "module": "src/index.ts",
-  "types": "dist/index.d.ts",
+  "main": "./dist/module/index.js",
+  "module": "./src/index.ts",
+  "types": "./dist/module/index.d.ts",
+  "exports": {
+    "import": "./dist/module/index.js"
+  },
   "scripts": {
     "watch": "rimraf dist && tsc --watch",
     "build": "rimraf dist && tsc"

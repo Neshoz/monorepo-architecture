@@ -1,3 +1,4 @@
+const fs = require('fs')
 const { exec } = require('child_process')
 const { join } = require('path')
 
@@ -28,7 +29,7 @@ function tscWatch(package) {
     (err) => {
       if (err) {
         childProcess.stdout.unpipe(process.stdout)
-        childProcess.unref()
+        childProcess.kill(1)
       }
     }
   )
@@ -46,10 +47,22 @@ function generateTsDeclarations(package) {
   )
 }
 
+function rmrfDist(package) {
+  const childProcess = exec(
+    `rimraf ${getPackagePath(package)}/dist`,
+    (err) => {
+      if (err) {
+        childProcess.kill(1)
+      }
+    }
+  )
+}
+
 module.exports = {
   getPackage,
   getPackagePath,
   getExternalDependencies,
   tscWatch,
-  generateTsDeclarations
+  generateTsDeclarations,
+  rmrfDist
 }

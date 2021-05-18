@@ -2,8 +2,12 @@
   "name": "@mediatool-poc/hub",
   "version": "1.0.0",
   "description": "The hub part of the app",
-  "main": "dist/index.js",
-  "module": "src/index.tsx",
+  "main": "./dist/module/index.js",
+  "module": "./src/index.tsx",
+  "types": "./dist/module/index.d.ts",
+  "exports": {
+    "import": "./dist/module/index.js"
+  },
   "scripts": {
     "tsc:watch": "tsc --watch --noEmit && yarn build:watch",
     "build:watch": "yarn build-tools build:esbuild -f hub",
@@ -12,6 +16,7 @@
   "dependencies": {
     "@handsontable/react": "^5.0.0",
     "@mediatool-poc/ui": "1.0.0",
+    "@mediatool-poc/tools": "1.0.0",
     "esbuild": "^0.11.19",
     "react-dnd": "^14.0.2",
     "react-dnd-html5-backend": "^14.0.0",

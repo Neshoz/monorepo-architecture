@@ -3,6 +3,7 @@ const { build } = require('esbuild')
 const program = require('commander')
 const { exec } = require('child_process')
 const { start } = require('../src/start')
+const { createProdBuild } = require('../src/create-prod-build')
 const {
   getExternalDependencies,
   getPackage,
@@ -16,6 +17,10 @@ program
   .description('Start core and tsc watcher for named package')
   .action(start)
 
+program
+  .command('build <package>')
+  .description('Create a production build for named package')
+  .action(createProdBuild)
 
 program
   .command('build:esbuild')
