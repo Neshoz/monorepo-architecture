@@ -15,7 +15,7 @@
     "core": "yarn workspace @mediatool-poc/core",
     "tools": "yarn workspace @mediatool-poc/tools",
     "docker:build": "docker image rm docker-app --force && docker build . -t docker-app",
-    "docker:local-prod": "yarn docker:build && docker run -p 5000:5000 docker-app"
+    "docker:local": "yarn docker:build && docker run -p 5000:5000 docker-app"
   },
   "author": "",
   "license": "ISC",

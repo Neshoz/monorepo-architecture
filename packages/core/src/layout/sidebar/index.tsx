@@ -2,7 +2,6 @@ import React from 'react'
 import { ISidebarItem } from '../../types'
 import { NavLink } from '../../components'
 import '../../styles/sidebar.css'
-
 interface IProps {
   items: ISidebarItem[]
 }

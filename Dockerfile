@@ -18,9 +18,9 @@ RUN yarn
 COPY . .
 
 # Build all the packages
-RUN yarn ui build
-RUN yarn tools build
-RUN yarn hub build
+RUN yarn build ui
+RUN yarn build tools
+RUN yarn build hub
 
 # Build app
 RUN yarn build

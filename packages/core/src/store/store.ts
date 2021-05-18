@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { createStore, Action, combineReducers, Store } from 'redux'
+import { Entity } from '@mediatool-poc/tools'
 
 export type BaseAction<T> = {
   entity: Entity

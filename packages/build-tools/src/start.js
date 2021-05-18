@@ -7,7 +7,7 @@ const start = (packageName) => {
       console.error(`Error starting core: `, err)
       process.exit()
     }
-  })
+  }).stdout.pipe(process.stdout)
   tscWatch('core')
   tscWatch(packageName)
 }

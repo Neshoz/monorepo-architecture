@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react'
 import '../../styles/app-layout.css'
-
 interface IProps {
   sidebar: ReactNode
   main: ReactNode
