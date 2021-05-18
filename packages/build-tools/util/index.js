@@ -1,4 +1,3 @@
-const fs = require('fs')
 const { exec } = require('child_process')
 const { join } = require('path')
 
@@ -28,7 +27,6 @@ function tscWatch(package) {
     `tsc --watch --noEmit --project ${getPackagePath(package)}`,
     (err) => {
       if (err) {
-        childProcess.stdout.unpipe(process.stdout)
         childProcess.kill(1)
       }
     }

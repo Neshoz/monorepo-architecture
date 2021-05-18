@@ -8,14 +8,14 @@ const createProdBuild = (packageName) => {
   rmrfDist(packageName)
   const childProcess = exec(
     `rollup --config ${configPath} --configPackage ${packageName}`,
-    (err) => {
+    (err, _, stderr) => {
       if (err) {
+        console.log('stderr ', stderr)
         childProcess.kill(1)
         process.exit()
       }
     }
   )
-  childProcess.stderr.pipe(process.stderr)
 }
 
 exports.createProdBuild = createProdBuild
