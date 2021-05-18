@@ -4,6 +4,7 @@ const program = require('commander')
 const { exec } = require('child_process')
 const { start } = require('../src/start')
 const { createProdBuild } = require('../src/create-prod-build')
+const { createNewPackage } = require('../src/create-new-package')
 const {
   getExternalDependencies,
   getPackage,
@@ -21,6 +22,11 @@ program
   .command('build <package>')
   .description('Create a production build for named package')
   .action(createProdBuild)
+
+program
+  .command('create:package <package>')
+  .description('Creates a new package and sets up the folder structure')
+  .action(createNewPackage)
 
 program
   .command('build:esbuild')
