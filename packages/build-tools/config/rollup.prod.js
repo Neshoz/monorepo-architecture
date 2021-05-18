@@ -44,7 +44,7 @@ export default (commandLineArgs) => {
         }),
         nodeResolve({
           // moduleDirectories: mediatoolPackages,
-          dedupe: Object.keys(pkg.dependencies)
+          dedupe: pkgDependencies
         })
       ]
     },
