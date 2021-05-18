@@ -1,6 +1,7 @@
 const fs = require('fs')
 const { exec } = require('child_process')
 const { resolve } = require('path')
+const { getPackagePath } = require('../util')
 
 const createPackageJson = (packageName) => ({
   name: `@mediatool-poc/${packageName}`,
@@ -29,7 +30,7 @@ const createRmDirCurry = (folderPath) => () => {
 }
 
 const createNewPackage = (packageName) => {
-  const packagePath = resolve(__dirname, '../../', packageName)
+  const packagePath = getPackagePath(packageName)
   const rmDir = createRmDirCurry(packagePath)
 
   console.log(`Creating new package under packages/${packageName}`)

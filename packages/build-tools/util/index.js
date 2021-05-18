@@ -48,8 +48,9 @@ function generateTsDeclarations(package) {
 function rmrfDist(package) {
   const childProcess = exec(
     `rimraf ${getPackagePath(package)}/dist`,
-    (err) => {
+    (err, _, stderr) => {
       if (err) {
+        console.log('Error removing dist: ', stderr)
         childProcess.kill(1)
       }
     }
