@@ -15,7 +15,15 @@ const Campaign = () => {
   return (
     <DndProvider backend={HTML5Backend}>
       <p>Created Entity</p>
-      <p>{data ? JSON.stringify(data, null, 2) : 'Could not find entity'}</p>
+      {data
+        ? (
+          <div>
+            <p>id: {data._id}</p>
+            <p>name: {data.name}</p>
+          </div>
+        )
+        : `Entity with id ${campaignId} not found`
+      }
     </DndProvider>
   );
 };

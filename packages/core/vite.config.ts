@@ -1,3 +1,4 @@
+// @ts-nocheck
 import fs from 'fs'
 import { defineConfig } from 'vite'
 import { join } from 'path'
@@ -7,15 +8,13 @@ const isBuildTool = (packageName: string) => {
   return packageName === `@mediatool-poc/build-tools`
 }
 interface IResolveConfig {
-  resolveAlias: {
-    [packageName: string]: string
-  }
+  resolveAlias: Record<string, string>
   dedupe: string[]
 }
 
 const buildResolveConfig = (): IResolveConfig => {
   const packagesPath = join(__dirname, '../')
-  return fs.readdirSync(packagesPath).reduce((acc, dir) => {
+  return fs.readdirSync(packagesPath).reduce((acc, dir): IResolveConfig => {
     const p = require(`${packagesPath}/${dir}/package.json`)
     if (!isBuildTool(p.name)) {
       acc.resolveAlias[p.name] = join(`${packagesPath}/${dir}/${p.module}`)
@@ -30,7 +29,7 @@ const buildResolveConfig = (): IResolveConfig => {
   }, {
     resolveAlias: {},
     dedupe: []
-  })
+  } as IResolveConfig)
 }
 
 const config = buildResolveConfig()
@@ -39,7 +38,8 @@ const config = buildResolveConfig()
 export default defineConfig({
   server: {
     port: 8000,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    open: true
   },
   resolve: {
     alias: config.resolveAlias,

@@ -1,6 +1,5 @@
 const fs = require('fs')
 const { exec } = require('child_process')
-const { resolve } = require('path')
 const { getPackagePath } = require('../util')
 
 const createPackageJson = (packageName) => ({

@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-const { build } = require('esbuild')
 const program = require('commander')
+const { build } = require('esbuild')
 const { exec } = require('child_process')
 const { start } = require('../src/start')
 const { createProdBuild } = require('../src/create-prod-build')
 const { createNewPackage } = require('../src/create-new-package')
+const { buildAllPackages } = require('../src/build-all-packages')
 const {
   getExternalDependencies,
   getPackage,
@@ -22,6 +23,11 @@ program
   .command('build <package>')
   .description('Create a production build for named package')
   .action(createProdBuild)
+
+program
+  .command('build:all')
+  .description('Builds all the packages')
+  .action(buildAllPackages)
 
 program
   .command('create:package <package>')

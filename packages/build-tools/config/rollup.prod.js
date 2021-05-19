@@ -1,19 +1,15 @@
 import { join } from 'path'
-import typescript from '@rollup/plugin-typescript'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
+import typescript from '@rollup/plugin-typescript'
+import html from '@rollup/plugin-html'
+import less from 'rollup-plugin-less'
 const { getPackage, getPackagePath } = require("../util")
 
 export default (commandLineArgs) => {
   const { configPackage } = commandLineArgs
-
-
   const pkg = getPackage(configPackage)
   const packagePath = getPackagePath(configPackage)
   const pkgDependencies = Object.keys(pkg.dependencies)
-  /*
-  const mediatoolPackages = Object.keys(pkg.dependencies)
-    .filter(dep => dep.includes('@mediatool'))*/
-
 
   const packageDist = `${packagePath}/dist`
   const external = [
@@ -43,8 +39,13 @@ export default (commandLineArgs) => {
           noEmitOnError: true,
         }),
         nodeResolve({
-          // moduleDirectories: mediatoolPackages,
           dedupe: pkgDependencies
+        }),
+        less(),
+        html({
+          meta: [
+            { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+          ]
         })
       ]
     },
@@ -66,8 +67,13 @@ export default (commandLineArgs) => {
           noEmitOnError: true,
         }),
         nodeResolve({
-          // moduleDirectories: mediatoolPackages,
           dedupe: pkgDependencies
+        }),
+        less(),
+        html({
+          meta: [
+            { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+          ]
         })
       ]
     }
