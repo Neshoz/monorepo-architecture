@@ -9,8 +9,8 @@
     "import": "./dist/module/index.js"
   },
   "scripts": {
-    "watch": "rimraf dist && tsc --watch",
-    "build": "rimraf dist && tsc"
+    "tsc:watch": "tsc --watch --noEmit",
+    "build": "rimraf dist && rollup --config rollup.config.js"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.0"

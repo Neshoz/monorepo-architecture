@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useMemo, ComponentType, ReactNode, useEffect, useRef } from 'react'
+import React, { Suspense, lazy, useMemo, ComponentType, ReactNode } from 'react'
 import { RouteComponentProps } from 'react-router-dom'
 import { ComponentLoader, IRoute } from '../types'
 

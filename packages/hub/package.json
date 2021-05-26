@@ -9,9 +9,8 @@
     "import": "./dist/module/index.js"
   },
   "scripts": {
-    "tsc:watch": "tsc --watch --noEmit && yarn build:watch",
-    "build:watch": "yarn build-tools build:esbuild -f hub",
-    "build": "rimraf dist && tsc"
+    "tsc:watch": "tsc --watch --noEmit",
+    "build": "rimraf dist && rollup --config rollup.config.js"
   },
   "dependencies": {
     "@handsontable/react": "^5.0.0",

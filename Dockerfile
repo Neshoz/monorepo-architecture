@@ -16,17 +16,16 @@ RUN yarn
 
 # Copy all files of our app (except files specified in the .dockerignore)
 COPY . .
+RUN yarn
 
 # Build all the packages
-RUN yarn build ui
-RUN yarn build tools
-RUN yarn build hub
-
-# Build app
-RUN yarn build
+RUN yarn ui build
+RUN yarn tools build
+RUN yarn hub build
+RUN yarn core build
 
 # Port
 EXPOSE 8000
 
 # Run the app
-CMD ["yarn", "serve:prod"]
+CMD ["yarn", "start"]

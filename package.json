@@ -7,15 +7,14 @@
   "version": "1.0.0",
   "description": "PoC monorepo",
   "scripts": {
-    "start": "yarn build-tools start",
-    "build": "yarn build-tools build",
+    "start": "yarn core start",
     "serve:prod": "yarn core serve",
     "hub": "yarn workspace @mediatool-poc/hub",
     "ui": "yarn workspace @mediatool-poc/ui",
     "core": "yarn workspace @mediatool-poc/core",
     "tools": "yarn workspace @mediatool-poc/tools",
     "docker:build": "docker image rm docker-app --force && docker build . -t docker-app",
-    "docker:local": "yarn docker:build && docker run -p 5000:5000 docker-app"
+    "docker:local": "yarn docker:build && docker run -p 8000:8000 docker-app"
   },
   "author": "",
   "license": "ISC",

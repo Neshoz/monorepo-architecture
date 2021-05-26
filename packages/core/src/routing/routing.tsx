@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import { IRoute, LazyPage } from '@mediatool-poc/tools'
-
 interface IProps {
   routes: IRoute[]
   fallback?: ReactNode

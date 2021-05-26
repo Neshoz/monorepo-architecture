@@ -1,9 +1,10 @@
 #!/usr/bin/env node
+
 const program = require('commander')
 const { build } = require('esbuild')
 const { exec } = require('child_process')
 const { start } = require('../src/start')
-const { createProdBuild } = require('../src/create-prod-build')
+// const { createProdBuild } = require('../src/create-prod-build')
 const { createNewPackage } = require('../src/create-new-package')
 const { buildAllPackages } = require('../src/build-all-packages')
 const {
@@ -19,10 +20,12 @@ program
   .description('Start core and tsc watcher for named package')
   .action(start)
 
+/*
 program
   .command('build <package>')
   .description('Create a production build for named package')
   .action(createProdBuild)
+*/
 
 program
   .command('build:all')

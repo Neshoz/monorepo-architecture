@@ -1,14 +1,14 @@
-import { join } from 'path'
-import { nodeResolve } from '@rollup/plugin-node-resolve'
-import typescript from '@rollup/plugin-typescript'
-import html from '@rollup/plugin-html'
-import less from 'rollup-plugin-less'
+const { join } = require('path')
+const { nodeResolve } = require('@rollup/plugin-node-resolve')
+const typescript = require('@rollup/plugin-typescript')
+const html = require('@rollup/plugin-html')
+const less = require('rollup-plugin-less')
 const { getPackage, getPackagePath } = require("../util")
 
-export default (commandLineArgs) => {
-  const { configPackage } = commandLineArgs
-  const pkg = getPackage(configPackage)
-  const packagePath = getPackagePath(configPackage)
+module.exports.createRollupConfig = (packageName) => {
+  const isCore = packageName === 'core'
+  const pkg = getPackage(packageName)
+  const packagePath = getPackagePath(packageName)
   const pkgDependencies = Object.keys(pkg.dependencies)
 
   const packageDist = `${packagePath}/dist`
@@ -42,7 +42,7 @@ export default (commandLineArgs) => {
           dedupe: pkgDependencies
         }),
         less(),
-        html({
+        isCore && html({
           meta: [
             { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
           ]
@@ -70,7 +70,7 @@ export default (commandLineArgs) => {
           dedupe: pkgDependencies
         }),
         less(),
-        html({
+        isCore && html({
           meta: [
             { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
           ]

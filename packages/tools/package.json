@@ -5,12 +5,13 @@
   "main": "./dist/module/index.js",
   "module": "./src/index.ts",
   "types": "./dist/module/index.d.ts",
+  "type": "module",
   "exports": {
     "import": "./dist/module/index.js"
   },
   "scripts": {
-    "watch": "rimraf dist && tsc --watch",
-    "build": "rimraf dist && tsc"
+    "tsc:watch": "tsc --watch --noEmit",
+    "build": "rimraf dist && rollup --config rollup.config.js"
   },
   "dependencies": {
     "react-redux": "^7.2.3",
