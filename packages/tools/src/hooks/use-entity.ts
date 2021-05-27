@@ -1,22 +1,32 @@
 // @ts-nocheck
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Entity } from '../types'
-import { createEntityAction } from '../state'
+import { Entity, IApi, IGQLApi, Query } from '../types'
+import { createEntityAction, entityFetchedAction } from '../state'
+import { isRestApi } from '../util/type-guards'
+
+type Api = IApi | IGQLApi
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
 // Entity would be used for action types: app/resource/${entity}/<action>
 // What if this hook would provide common actions, such as create, update and delete?
 // These actions would be following a specific convention and structure.
-export const useEntity = <T>(entity: Entity, id?: string) => {
-  const cachedEntity = useSelector(state => state.idMap[id]) as T
+export const useEntity = <T>(entity: Entity, api: Api, id?: string, query?: Query) => {
+  console.log(id)
+  const cachedEntity = useSelector(
+    state => {
+      console.log(state)
+      return state.idMap[id]
+    },
+    () => true
+  ) as T
   const dispatch = useDispatch()
-  const [ error, setError ] = useState(null)
+  const [ error, setError ] = useState<Error | undefined>(undefined)
   const [ loading, setLoading ] = useState(false)
   const [ hasCalledAction, setHasCalledAction ] = useState(false)
 
-  const createEntity = <T>(payload: T): void => {
+  const createEntity = async <T>(payload: T): void => {
     dispatch(
       createEntityAction<T>(entity, payload)
     )
@@ -33,15 +43,26 @@ export const useEntity = <T>(entity: Entity, id?: string) => {
   }
 
   useEffect(() => {
-    if (!hasCalledAction && !cachedEntity) {
+    if (!cachedEntity) {
       // If the entity isn't already fetched and stored in redux, fetch it
       setLoading(true)
-      delay(1000)
-        .then(/* Dispatch action here, and let socket take care of updating redux state */)
-        .catch(/* Dispatch error action here, or not */)
-        .finally(() => setLoading(false))
+      if (isRestApi(api)) {
+        api.get<T>(`/${entity}/${id}`, query)
+          .then((data) => {
+            if (error) {
+              setError(error)
+              return
+            }
+            const item = data.results[0]
+            dispatch(
+              entityFetchedAction<T>(entity, { ...item, _id: id })
+            )
+          })
+          .catch(setError)
+          .finally(() => setLoading(false))
+      }
     }
-  }, [ cachedEntity ])
+  }, [])
 
   return {
     data: cachedEntity,

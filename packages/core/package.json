@@ -17,6 +17,7 @@
   "dependencies": {
     "@chakra-ui/react": "^1.6.0",
     "@mediatool-poc/hub": "1.0.0",
+    "@mediatool-poc/user-profile": "1.0.0",
     "@mediatool-poc/tools": "1.0.0",
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.3",

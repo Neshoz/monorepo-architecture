@@ -37,10 +37,11 @@ const initialOrganization = {
 }
 
 function idMapReducer(state = initialIdMap, action: Action<BaseAction<any>>) {
-  const { entity } = action
+  const { entity, payload } = action
   switch (action.type) {
     case `app/${entity}/created`:
-      const { payload } = action
+      return { ...state, [payload._id]: payload }
+    case `app/${entity}/fetched`:
       return { ...state, [payload._id]: payload }
     default:
       return state
@@ -48,15 +49,19 @@ function idMapReducer(state = initialIdMap, action: Action<BaseAction<any>>) {
 }
 
 function organizationReducer(state = initialOrganization, action: Action<BaseAction<any>>) {
-  const { entity } = action
+  const { entity, payload } = action
   const prop = pluralize(entity)
   switch (action.type) {
     case `app/${entity}/created`:
-      const { payload } = action
-        return {
-          ...state,
-          [prop]: state[prop].concat(payload._id)
-        }
+      return {
+        ...state,
+        [prop]: (state[prop] ||[]).concat(payload._id)
+      }
+    case `app/${entity}/fetched`:
+      return {
+        ...state,
+        [prop]: (state[prop] ||[]).concat(payload._id)
+      }
     default:
       return state
   }

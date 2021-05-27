@@ -5,3 +5,9 @@ export const createEntityAction = <T>(entity: Entity, payload: T): BaseAction<T>
   entity,
   payload
 })
+
+export const entityFetchedAction = <T>(entity: Entity, payload: T): BaseAction<T> => ({
+  type: `app/${entity}/fetched`,
+  entity,
+  payload
+})
