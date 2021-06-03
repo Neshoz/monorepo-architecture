@@ -4,6 +4,11 @@ import { defineConfig } from 'vite'
 import { join } from 'path'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 
+const blackList = [
+  'build-tools',
+  '@types'
+]
+
 const isBuildTool = (packageName: string) => {
   return packageName === `@mediatool-poc/build-tools`
 }
@@ -15,6 +20,9 @@ interface IResolveConfig {
 const buildResolveConfig = (): IResolveConfig => {
   const packagesPath = join(__dirname, '../')
   return fs.readdirSync(packagesPath).reduce((acc, dir): IResolveConfig => {
+    if (blackList.includes(dir)) {
+      return acc
+    }
     const p = require(`${packagesPath}/${dir}/package.json`)
     if (!isBuildTool(p.name)) {
       acc.resolveAlias[p.name] = join(`${packagesPath}/${dir}/${p.module}`)

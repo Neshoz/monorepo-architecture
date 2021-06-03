@@ -24,7 +24,12 @@ const App = () => (
       <BrowserRouter>
         <AppLayout
           sidebar={<Sidebar items={sidebarItems} />}
-          main={<Routing routes={routes} />}
+          main={
+            <Routing
+              routes={routes}
+              fallback="/login"
+            />
+          }
         />
       </BrowserRouter>
     </ChakraProvider>

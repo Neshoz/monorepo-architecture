@@ -8,17 +8,14 @@
     "moduleResolution": "node",
     "declaration": false,
     "strict": true,
+    "noEmit": true,
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
     "skipLibCheck": true,
     "noErrorTruncation": true,
-    "paths": {
-      "@mediatool-poc/ui/*": ["/ui/dist/module/*"],
-      "@mediatool-poc/tools/*": ["tools/*"],
-      "@mediatool-poc/hub/*": ["hub/*"],
-      "@mediatool-poc/core/*": ["core/*"]
-    }
+    "noStrictGenericChecks": true,
+    "typeRoots": ["./packages/@types"]
   }
 }

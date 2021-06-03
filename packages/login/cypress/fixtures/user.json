@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Jørgen",
+        "last": "Rosseland"
+      },
+      "location": {
+        "street": {
+          "number": 2579,
+          "name": "Bjerkefaret"
+        },
+        "city": "Arendal",
+        "state": "Akershus",
+        "country": "Norway",
+        "postcode": "4838",
+        "coordinates": {
+          "latitude": "53.8509",
+          "longitude": "-173.9618"
+        },
+        "timezone": {
+          "offset": "+9:30",
+          "description": "Adelaide, Darwin"
+        }
+      },
+      "email": "jorgen.rosseland@example.com",
+      "login": {
+        "uuid": "7be41001-0f9e-4778-9396-b264dbf64d28",
+        "username": "purplegorilla741",
+        "password": "chewy",
+        "salt": "c8M3DBHd",
+        "md5": "c83fd2198d83239ca4c2f7431003984d",
+        "sha1": "e5aead5d517c3d0a8abbcf6c0b241c5ea40f86f6",
+        "sha256": "cbccf7370942b2cdb20916a7dc4dcbcf8138ecf8011168a563af3e34d40e0a1b"
+      },
+      "dob": {
+        "date": "1952-08-29T05:56:09.884Z",
+        "age": 69
+      },
+      "registered": {
+        "date": "2009-02-22T17:29:26.120Z",
+        "age": 12
+      },
+      "phone": "77942815",
+      "cell": "97828697",
+      "id": {
+        "name": "FN",
+        "value": "29085214738"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/26.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/26.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/26.jpg"
+      },
+      "nat": "NO"
+    }
+  ],
+  "info": {
+    "seed": "1604c164-85b6-423f-a3a3-7a227bab39c5",
+    "results": 1,
+    "page": 1,
+    "version": "1.3"
+  }
+}

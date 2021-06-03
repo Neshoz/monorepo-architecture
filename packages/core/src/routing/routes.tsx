@@ -8,5 +8,9 @@ export const routes: IRoute[] = [
   {
     path: '/user/:userId',
     component: () => import('@mediatool-poc/user-profile')
+  },
+  {
+    path: '/login',
+    component: () => import('@mediatool-poc/login')
   }
 ]

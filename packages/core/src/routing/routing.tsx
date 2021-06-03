@@ -1,12 +1,13 @@
-import React, { ReactNode } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import React from 'react'
+import { Redirect, Route, Switch } from 'react-router-dom'
 import { IRoute, LazyPage } from '@mediatool-poc/tools'
 interface IProps {
   routes: IRoute[]
-  fallback?: ReactNode
+  fallback?: string
 }
 
 export const Routing = ({ routes, fallback }: IProps) => {
+  const fallbackRoute = routes.find(({ path }) => path === fallback)
   return (
     <Switch>
       {routes.map((route, index) => (
@@ -23,7 +24,9 @@ export const Routing = ({ routes, fallback }: IProps) => {
           )}
         />
       ))}
-      {fallback && (<Route render={() => <>{fallback}</>}/>)}
+      {fallbackRoute && (
+        <Redirect exact to={fallback!} />
+      )}
     </Switch>
   )
 }

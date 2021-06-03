@@ -1,8 +1,3 @@
-import { createApi } from '@mediatool-poc/tools'
+import { HTTPApi } from '@mediatool-poc/tools'
 
-export const api = createApi({
-  baseUrl: 'https://randomuser.me/api/',
-  overrides: {
-    getEndpoint: ''
-  }
-})
+export const api = new HTTPApi('https://randomuser.me/api/')

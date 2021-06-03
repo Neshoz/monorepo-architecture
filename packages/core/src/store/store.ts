@@ -36,7 +36,7 @@ const initialOrganization = {
   campaigns: ['456qwerty'],
 }
 
-function idMapReducer(state = initialIdMap, action: Action<BaseAction<any>>) {
+export function idMapReducer(state = initialIdMap, action: Action<BaseAction<any>>) {
   const { entity, payload } = action
   switch (action.type) {
     case `app/${entity}/created`:
@@ -48,7 +48,7 @@ function idMapReducer(state = initialIdMap, action: Action<BaseAction<any>>) {
   }
 }
 
-function organizationReducer(state = initialOrganization, action: Action<BaseAction<any>>) {
+export function organizationReducer(state = initialOrganization, action: Action<BaseAction<any>>) {
   const { entity, payload } = action
   const prop = pluralize(entity)
   switch (action.type) {
