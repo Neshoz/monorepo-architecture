@@ -1,0 +1,22 @@
+{
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "baseUrl": "./packages",
+    "module": "esnext",
+    "target": "es5",
+    "lib": ["es6", "dom", "es2020"],
+    "jsx": "react", 
+    "moduleResolution": "node",
+    "declaration": false,
+    "strict": true,
+    "noEmit": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true,
+    "noErrorTruncation": true,
+    "noStrictGenericChecks": true,
+    "types": ["jest"]
+  }
+}

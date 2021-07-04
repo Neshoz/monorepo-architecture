@@ -1,0 +1,10 @@
+{
+  "$schema": "https://on.cypress.io/cypress.schema.json",
+  "baseUrl": "http://localhost:5000",
+  "integrationFolder": "cypress/tests", 
+  "env": {
+    "codeCoverage": {
+      "url": "http://localhost:5000/__coverage__"
+    }
+  }
+}
