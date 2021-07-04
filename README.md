@@ -1,1 +1,1 @@
-## Example monorepo architecture of micro frontends and micro services
+## Example monorepo architecture of micro frontends and microservices
