@@ -17,6 +17,9 @@
     "skipLibCheck": true,
     "noErrorTruncation": true,
     "noStrictGenericChecks": true,
-    "types": ["jest"]
+    "types": ["jest"],
+    "paths": {
+      "@mediatool-poc/ui/*": ["ui/src/*"]
+    }
   }
 }

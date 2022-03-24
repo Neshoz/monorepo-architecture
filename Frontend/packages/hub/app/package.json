@@ -2,7 +2,7 @@
   "name": "@mediatool-poc/hub-fe",
   "version": "1.0.0",
   "description": "The hub part of the app",
-  "main": "./dist/module/index.js",
+  "main": "./src/index.tsx",
   "module": "./src/index.tsx",
   "types": "./dist/module/index.d.ts",
   "exports": {

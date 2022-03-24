@@ -1,4 +1,3 @@
-
 import fs from 'fs'
 import { defineConfig } from 'vite'
 import { join } from 'path'

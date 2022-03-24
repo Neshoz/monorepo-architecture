@@ -24,7 +24,7 @@ const Hub = () => {
         colorScheme="purple"
         onClick={handleClick}
       >
-        Create T Entity
+        Create Test Entity
       </Button>
       <Switch>
         <Route

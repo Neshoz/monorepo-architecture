@@ -2,7 +2,7 @@
   "name": "@mediatool-poc/core",
   "version": "1.0.0",
   "description": "The core part of the app",
-  "main": "dist/index.js",
+  "main": "./index.tsx",
   "module": "./index.tsx",
   "types": "dist/index.d.ts",
   "scripts": {

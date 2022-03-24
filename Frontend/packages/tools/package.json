@@ -2,7 +2,7 @@
   "name": "@mediatool-poc/tools",
   "version": "1.0.0",
   "description": "Tools for the tool itself",
-  "main": "./dist/module/index.js",
+  "main": "./src/index.ts",
   "module": "./src/index.ts",
   "types": "./dist/module/index.d.ts",
   "type": "module",

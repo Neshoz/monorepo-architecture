@@ -3,6 +3,16 @@ import { useSelector, useDispatch, Selector } from "react-redux";
 import { AppState, Entity } from "../types";
 import { createEntityAction, entityFetchedAction } from "../state";
 
+type ResolverWithArgs<TReturnType, TArgs> = {
+  select: (args: TArgs) => Selector<AppState, TReturnType>
+  fetch: (args: TArgs) => Promise<any>
+}
+
+type Resolver<TReturnType> = {
+  select?: Selector<AppState, TReturnType>
+  fetch?: Promise<TReturnType>
+}
+
 interface IPlainApi {
   get?: () => Promise<unknown>
   post?: Promise<unknown>

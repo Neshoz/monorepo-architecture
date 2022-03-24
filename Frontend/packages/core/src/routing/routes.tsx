@@ -12,5 +12,5 @@ export const routes: IRoute[] = [
   {
     path: '/login',
     component: () => import('@mediatool-poc/login')
-  }
+  },
 ]

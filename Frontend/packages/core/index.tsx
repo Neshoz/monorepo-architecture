@@ -5,8 +5,7 @@ import { Provider } from 'react-redux'
 import { ChakraProvider } from '@chakra-ui/react'
 import { store } from './src/store'
 import { AppLayout, Sidebar } from './src/layout'
-import { routes } from './src/routing'
-import { Routing } from './src/routing/routing'
+import { Routing, routes } from './src/routing'
 import { ISidebarItem } from './src/types'
 import './src/styles/index.css'
 
@@ -35,7 +34,6 @@ const App = () => (
     </ChakraProvider>
   </Provider>
 )
-
 
 ReactDOM.render(
   <App/>,

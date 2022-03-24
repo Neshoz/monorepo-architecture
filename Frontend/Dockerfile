@@ -9,7 +9,7 @@ COPY ./package.json .
 COPY ./yarn.lock .
 COPY ./packages/build-tools/package.json ./packages/build-tools/
 COPY ./packages/core/package.json ./packages/core/
-COPY ./packages/hub/package.json ./packages/hub/
+COPY ./packages/hub/app/package.json ./packages/hub/
 COPY ./packages/tools/package.json ./packages/tools/
 COPY ./packages/ui/package.json ./packages/ui/
 RUN yarn
